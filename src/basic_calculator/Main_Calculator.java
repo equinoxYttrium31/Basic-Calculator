@@ -8,27 +8,35 @@ public class Main_Calculator {
 
 		Scanner scanner = new Scanner(System.in);
 
+		System.out.println("=====================================");
+		System.out.println("     🖩 WELCOME TO BASIC CALCULATOR   ");
+		System.out.println("=====================================\n");
+
 		while (true) {
-			System.out.print("Enter the First Number: ");
+			System.out.println("\n────────────────────────────────────");
+			System.out.print("▶ Enter the First Number: ");
 			int firstInput = scanner.nextInt();
 
-			System.out.print("Enter the Second Number: ");
+			System.out.print("▶ Enter the Second Number: ");
 			int secondInput = scanner.nextInt();
 
-			System.out.println("\n\n[1] Add");
+			System.out.println("\n────────────────────────────────────");
+			System.out.println("SELECT OPERATION");
+			System.out.println("────────────────────────────────────");
+			System.out.println("[1] Add");
 			System.out.println("[2] Subtract");
 			System.out.println("[3] Multiply");
 			System.out.println("[4] Divide");
-			System.out.print("Select Operation: ");
+			System.out.print("▶ Your Choice: ");
 			int choice = scanner.nextInt();
-
 			scanner.nextLine();
+			System.out.println("\n────────────────────────────────────");
 
 			switch (choice) {
 			case 1: {
 				int result = Calculations.Addition(firstInput, secondInput);
-				System.out.println("The answer was: " + result);
-				System.out.print("Want to continue? [Y][N]: ");
+				System.out.printf("Result: %d + %d = %d\n", firstInput, secondInput, result);
+				System.out.print("\nWant to continue? [Y][N]: ");
 
 				String answer = scanner.nextLine();
 
@@ -43,7 +51,7 @@ public class Main_Calculator {
 
 			case 2: {
 				int result = Calculations.Subtraction(firstInput, secondInput);
-				System.out.println("The answer was: " + result);
+				System.out.printf("Result: %d - %d = %d\n", firstInput, secondInput, result);
 				System.out.print("Want to continue? [Y][N]: ");
 
 				String answer = scanner.nextLine();
@@ -59,7 +67,7 @@ public class Main_Calculator {
 
 			case 3: {
 				int result = Calculations.Multiplication(firstInput, secondInput);
-				System.out.println("The answer was: " + result);
+				System.out.printf("Result: %d x %d = %d\n", firstInput, secondInput, result);
 				System.out.print("Want to continue? [Y][N]: ");
 
 				String answer = scanner.nextLine();
@@ -74,8 +82,14 @@ public class Main_Calculator {
 			}
 
 			case 4: {
+				while (secondInput == 0) {
+					System.out.println("Error: Division by zero is not allowed. Please enter a non-zero divisor.");
+					System.out.print("▶ Enter Second Number again: ");
+					secondInput = scanner.nextInt();
+					scanner.nextLine();
+				}
 				int result = Calculations.Division(firstInput, secondInput);
-				System.out.println("The answer was: " + result);
+				System.out.printf("Result: %d ÷ %d = %d\n", firstInput, secondInput, result);
 				System.out.print("Want to continue? [Y][N]: ");
 
 				String answer = scanner.nextLine();
@@ -85,7 +99,6 @@ public class Main_Calculator {
 					scanner.close();
 					return;
 				}
-
 				break;
 			}
 			default:
