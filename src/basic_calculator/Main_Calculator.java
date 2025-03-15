@@ -13,16 +13,16 @@ public class Main_Calculator {
 		System.out.println("=====================================\n");
 
 		while (true) {
-			System.out.println("\n────────────────────────────────────");
+			System.out.println("\n─────────────────────────────────────");
 			System.out.print("▶ Enter the First Number: ");
 			int firstInput = scanner.nextInt();
 
 			System.out.print("▶ Enter the Second Number: ");
 			int secondInput = scanner.nextInt();
 
-			System.out.println("\n────────────────────────────────────");
+			System.out.println("\n─────────────────────────────────────");
 			System.out.println("SELECT OPERATION");
-			System.out.println("────────────────────────────────────");
+			System.out.println("─────────────────────────────────────");
 			System.out.println("[1] Add");
 			System.out.println("[2] Subtract");
 			System.out.println("[3] Multiply");
@@ -30,7 +30,7 @@ public class Main_Calculator {
 			System.out.print("▶ Your Choice: ");
 			int choice = scanner.nextInt();
 			scanner.nextLine();
-			System.out.println("\n────────────────────────────────────");
+			System.out.println("\n─────────────────────────────────────");
 
 			switch (choice) {
 			case 1: {
